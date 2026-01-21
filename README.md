@@ -1,3 +1,11 @@
+# Introduction
+
+Assessing the creditworthiness of potential clients is a core component of lending decisions and relies heavily on the analysis of historical credit behavior. Credit risk is commonly segmented by delinquency severity, such as 30-day defaults (lower risk) and 120-day defaults (higher risk), as different levels of delinquency imply materially different business and risk implications.
+
+This project focuses on the analysis of a credit portfolio dataset containing demographic, employment, and credit history information, including: age, occupation, employment tenure, and monthly credit records; with the objective of identifying patterns associated with future default risk within a defined population.
+
+The analysis prioritizes data integrity validation across data sources, structural understanding of the datasets, interpretability of derived variables, and decision relevance. Rather than focusing on predictive modeling, this work emphasizes deep exploratory analysis to support risk segmentation, highlight data quality constraints, and inform potential downstream decision-making strategies.
+
 The original database and more details can be found at: https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction
 
 # Data Structure Analysis
