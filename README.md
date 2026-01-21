@@ -1,3 +1,5 @@
+The original database and more details can be found at: https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction
+
 # Data Structure Analysis
 
 Several data inconsistencies were identified during the initial exploration.
