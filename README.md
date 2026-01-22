@@ -12,9 +12,7 @@ The original database and more details can be found at: https://www.kaggle.com/d
 
 Several data inconsistencies were identified during the initial exploration.
 
-A mismatch was observed between credit_record and application_record: while 404 default-related records were found in credit_record, only 326 corresponding records were present in application_record. This suggests potential issues in the extraction logic, joining rules, or data origins, requiring validation with the data engineering team.
-
-After a broader comparison between both datasets, it was identified that **402,100 out of 438,557 records (91.7%) do not match across the two tables**. This reinforces the hypothesis of structural inconsistencies in the data pipeline or historical availability, and indicates that any downstream analysis should be interpreted with caution until lineage validation is completed.
+A broader comparison between both datasets, it was identified that **402,100 out of 438,557 records (91.7%) do not match across the two tables**. This create the hypothesis of structural inconsistencies in the data pipeline or historical availability, and indicates that any downstream analysis should be interpreted with caution until lineage validation is completed.
 
 For unemployed clients, the value **365243** is used in DAYS_EMPLOYED as a sentinel value. However, when cross-checking with OCCUPATION_TYPE, nearly **31% of records are null**, despite having DAYS_EMPLOYED filled with values different from 365243. This suggests either an undocumented business rule or a pipeline inconsistency.
 
