@@ -59,7 +59,7 @@ Within the 6.7% exposed population:
 
 Clients aged **36–55 represent 51.4% of this group**, indicating overrepresentation relative to other age bands. A notable pattern emerges when focusing on severe defaults (120 days): clients **aged 46–55 are overrepresented by +11 percentage points** compared to the 30-day default group.
 
-When combining age with employment stability, an even clearer pattern appears. Among clients with a 30-day default, **14.9% have less than two years of employment**, whereas this proportion increases to **25.0%** for clients with a 120-day default — a difference of **+10.1 percentage points**. This suggests that **employment stability plays a more significant role in default severity than age alone**.
+When combining age with employment stability, an even clearer pattern appears. Among clients with a 30-day default, **14.9% have less than two years of employment**, whereas this proportion increases to **25.0%** for clients with a 120-day default, a difference of **+10.1 percentage points**. This suggests that **employment stability plays a more significant role in default severity than age alone**.
 
 # Final Considerations
 
