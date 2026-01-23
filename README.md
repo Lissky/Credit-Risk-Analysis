@@ -12,11 +12,11 @@ The original database and more details can be found at: https://www.kaggle.com/d
 
 Several data inconsistencies were identified during the initial exploration.
 
-A broader comparison between both datasets, it was identified that **402,100 out of 438,557 records (91.7%) do not match across the two tables**. This create the hypothesis of structural inconsistencies in the data pipeline or historical availability, and indicates that any downstream analysis should be interpreted with caution until lineage validation is completed.
+A broader comparison between both datasets, it was identified that **402,053 out of 438,557 records (91.7%) do not match across the two tables**. This create the hypothesis of structural inconsistencies in the data pipeline or historical availability, and indicates that any downstream analysis should be interpreted with caution until lineage validation is completed.
 
 For unemployed clients, the value **365243** is used in DAYS_EMPLOYED as a sentinel value. However, when cross-checking with OCCUPATION_TYPE, nearly **31% of records are null**, despite having DAYS_EMPLOYED filled with values different from 365243. This suggests either an undocumented business rule or a pipeline inconsistency.
 
-Another relevant inconsistency was found among pensioners. Approximately **75,000 pensioners** were identified, but only **138 of them (0.184%)** had DAYS_EMPLOYED populated. This may indicate:
+Another relevant inconsistency was found among pensioners. Approximately **75,493 pensioners** were identified, but only **164 of them (0.217%)** had DAYS_EMPLOYED populated. This may indicate:
 
 1. Data leakage or inconsistencies during extraction or transformation.
 2. A subset of clients who recently became pensioners, with incomplete historical updates.
@@ -41,23 +41,23 @@ For an initial assessment of default behavior, MONTHS = 0 was used to represent 
 
 An additional flag was created to identify clients with at least one default event in the last 12 months.
 
-After isolating this population, it was observed that **409,223 out of 438,557 clients (93.3%)** did not have active credit exposure in the **last 12 months**. Therefore, subsequent analyses focus on the remaining **6.7%**, representing the effective risk-exposed population. Within the full dataset, **1.2% of clients experienced a 30-day default in the last 12 months**.
+After isolating this population, it was observed that, at least **409,223 out of 438,557 clients (93.3%)** did not have active credit exposure in the **last 12 months**. Therefore, subsequent analyses focus on the remaining **6.7%**, representing the effective risk-exposed population. Within the 33,856 clients dataset, **6.6% of clients experienced a 30-day default in the last 12 months**.
 
 ## Default Severity Analysis
 
 Within the 6.7% exposed population:
 
-- 72.1% experienced only a 30-day default
+- 88.5% experienced only a 30-day default
 
-- 5.5% experienced a 60-day default
+- 4.6% experienced a 60-day default
 
-- 1.7% experienced a 90-day default
+- 1.0999991% experienced a 90-day default
 
-- 20.6% experienced a 120-day default
+- 5.8000009% experienced a 120-day default
 
-Clients aged **36–55 represent 51.4% of this group**, indicating overrepresentation relative to other age bands. A notable pattern emerges when focusing on severe defaults (120 days): clients **aged 46–55 are overrepresented by +11 percentage points** compared to the 30-day default group.
+Clients aged **36–55 represent 56.4% of this group**, indicating overrepresentation relative to other age bands. A notable pattern emerges when focusing on severe defaults (120 days): clients **aged 46–55 are overrepresented by +8.3 percentage points** compared to the 30-day default group.
 
-When combining age with employment stability, an even clearer pattern appears. Among clients with a 30-day default, **14.9% have less than two years of employment**, whereas this proportion increases to **25.0%** for clients with a 120-day default, a difference of **+10.1 percentage points**. This suggests that **employment stability plays a more significant role in default severity than age alone**.
+When combining age with employment stability, an even clearer pattern appears. Among clients with a 30-day default, **15% have less than two years of employment**, whereas this proportion increases to **25.0%** for clients with a 120-day default, a difference of **+10.1 percentage points**. This suggests that **employment stability plays a more significant role in default severity than age alone**.
 
 # Final Considerations
 
